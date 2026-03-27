@@ -1,5 +1,6 @@
-package dev.java10x.CadastroDeHerois;
+package dev.java10x.CadastroDeHerois.Herois;
 
+import dev.java10x.CadastroDeHerois.Missoes.MissoesModel;
 import jakarta.persistence.*;
 
 /// Entity transforma uma classe em uma entidade do banco de dados
@@ -14,6 +15,9 @@ public class HeroiModel {
     private String funcao;
     private String habilidadePrimaria;
     private int nivelDoHeroi;
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") /// Foreing Key ou Chave Estrangeira
+    private MissoesModel missoes;
 
     public HeroiModel() {
     }
