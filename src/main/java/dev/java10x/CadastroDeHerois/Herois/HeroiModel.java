@@ -19,6 +19,7 @@ public class HeroiModel {
     private long id;
     private String nome;
     private String funcao;
+    @Column (unique = true)
     private String habilidadePrimaria;
     private int nivelDoHeroi;
     /// Um héroi so pode ter uma missão
