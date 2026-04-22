@@ -16,12 +16,24 @@ public class HeroiModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "id")
     private long id;
+
+    @Column (name = "nome")
     private String nome;
+
+    @Column (name = "img_Url")
+    private String imgUrl;
+
+    @Column(name = "funcao")
     private String funcao;
+
     @Column (unique = true)
     private String habilidadePrimaria;
+
+    @Column (name = "nivelDoHeroi")
     private int nivelDoHeroi;
+
     /// Um héroi so pode ter uma missão
     @ManyToOne
     @JoinColumn(name = "missoes_id") /// Foreing Key ou Chave Estrangeira
